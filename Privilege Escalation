@@ -1,3 +1,0 @@
-#Check Unquoted Path Service
-wmic service get name,displayname,pathname,startmode |findstr /i /v “C:\Windows\\” | findstr /i /v “””       
-
